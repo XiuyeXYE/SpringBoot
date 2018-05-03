@@ -36,20 +36,23 @@
 			<artifactId>vue</artifactId>
 			<version>1.0.21</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>de.codecentric</groupId>
-			<artifactId>spring-boot-admin-server</artifactId>
-			<version>RELEASE</version>
-		</dependency> -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>RELEASE</version>
-		</dependency>
+		<!-- <dependency> <groupId>de.codecentric</groupId> <artifactId>spring-boot-admin-server</artifactId>
+			<version>RELEASE</version> </dependency> -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-context-support</artifactId>
+			<version>RELEASE</version> </dependency> -->
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>
 			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 	</dependencies>
 </project>
