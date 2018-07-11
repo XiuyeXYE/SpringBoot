@@ -12,7 +12,7 @@ import com.xiuye.service.Demo4Service;
 
 @SpringBootApplication
 @ComponentScan("com.xiuye.service")
-@Controller
+//@Controller
 public class Demo4Controller {
 
 	@Autowired

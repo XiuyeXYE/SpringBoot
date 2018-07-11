@@ -25,7 +25,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.xiuye.util.LogUtil;
 
 @SpringBootApplication
-@Controller
+//@Controller
 @ControllerAdvice
 public class Demo3Controller extends SpringBootServletInitializer{
 

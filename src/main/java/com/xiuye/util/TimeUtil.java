@@ -15,7 +15,7 @@ public class TimeUtil {
 	public static long spending(){
 		return ETIME - STIME;
 	}
-	public static long outCost(){
+	public static long cost(){
 
 		ETIME = System.currentTimeMillis();
 		long r = ETIME-STIME;

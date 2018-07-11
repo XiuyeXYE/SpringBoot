@@ -15,7 +15,7 @@ import com.xiuye.util.LogUtil;
 
 @SpringBootApplication
 @MapperScan("com.xiuye.mapper")
-@RestController
+//@RestController
 public class Demo5Controller {
 
 	@Autowired

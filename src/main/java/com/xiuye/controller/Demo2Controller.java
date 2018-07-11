@@ -17,7 +17,7 @@ import com.xiuye.component.Demo2Properties;
 import com.xiuye.util.LogUtil;
 
 @ComponentScan({"com.xiuye.component","com.xiuye.config"})
-@RestController
+//@RestController
 @SpringBootApplication
 public class Demo2Controller {
 
