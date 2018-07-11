@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,10 +23,18 @@ import com.xiuye.util.LogUtil;
 
 //@Profile("production")
 //@ImportResource("application.xml")
-@SpringBootApplication//include @EnableAutoConfiguration
+@SpringBootApplication // include @EnableAutoConfiguration
 @RestController
-//@PropertySource("config/myconfig.properties")
+@EnableScheduling
+ @PropertySource("config/myconfig.properties")
 public class Main {
+
+	private int count = 0;
+
+	@Scheduled(cron = "*/6 * * * * ?")
+	private void process() {
+		System.out.println("this is scheduler task runing  " + (count++));
+	}
 
 	@Value("${my_config_info}")
 	private String info;
@@ -32,16 +42,16 @@ public class Main {
 	@Value("${test1-num}")
 	private String uuid;
 
-	@Value("${spring.config.name}")
-	private String springConfigName;
-
-	@Value("${spring.profiles.active}")
-	private String springProfilesActive;
+//	@Value("${spring.config.name}")
+//	private String springConfigName;
+//
+//	@Value("${spring.profiles.active}")
+//	private String springProfilesActive;
 
 	@PostConstruct
-	public void init(){
-		LogUtil.println(springConfigName);
-		LogUtil.println(springProfilesActive);
+	public void init() {
+//		LogUtil.println(springConfigName);
+//		LogUtil.println(springProfilesActive);
 		LogUtil.println(info);
 		LogUtil.println(uuid);
 	}
@@ -50,26 +60,24 @@ public class Main {
 	private Banner banner;
 
 	@Bean
-	public Banner createMyBanner(){
+	public Banner createMyBanner() {
 		return new MyBanner();
 	}
 
 	@GetMapping("/banner")
-	public Banner banner(){
+	public Banner banner() {
 		LogUtil.println(this.banner);
 		return this.banner;
 	}
 
-
-
 	public static void main(String[] args) {
-
-		//model 1 running
-//		SpringApplication.run(Main.class);
-		//model 2 running
+		// System.setProperty("spring.devtools.restart.enabled", "false");
+		// model 1 running
+		// SpringApplication.run(Main.class);
+		// model 2 running
 		SpringApplication app = new SpringApplication(Main.class);
-//		app.setAddCommandLineProperties(false);
-//		app.setBannerMode(Banner.Mode.CONSOLE);
+		// app.setAddCommandLineProperties(false);
+		// app.setBannerMode(Banner.Mode.CONSOLE);
 		app.run(args);
 	}
 
