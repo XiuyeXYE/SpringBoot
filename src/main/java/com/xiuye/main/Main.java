@@ -26,7 +26,7 @@ import com.xiuye.util.LogUtil;
 @SpringBootApplication // include @EnableAutoConfiguration
 @RestController
 @EnableScheduling
- @PropertySource("config/myconfig.properties")
+@PropertySource("config/myconfig.properties")
 public class Main {
 
 	private int count = 0;
